@@ -1,0 +1,46 @@
+# Node modules
+/node_modules/
+
+# Build output
+/dist/
+/build/
+
+# Vite development server cache
+.vite/
+
+# IDE/editor specific files
+/.vscode/
+/.idea/
+/*.iml
+
+# Log files
+*.log
+
+# npm and yarn lock files
+package-lock.json
+yarn.lock
+
+# Environment variables file
+.env
+.env.local
+.env.*.local
+
+# Dependency directories
+node_modules/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# TypeScript build artifacts (if you're using TypeScript)
+*.tsbuildinfo
+
+# Coverage reports
+coverage/
+
+# Vite-specific settings
+vite.config.ts
+vite.config.js
+
+# .env.production - for production environment variables (if using them)
+.env.production

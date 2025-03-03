@@ -1,0 +1,52 @@
+# Python bytecode files
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+
+# Virtual environment directories
+env/
+venv/
+.venv/
+
+# Environment variables file
+.env
+
+# Flask-related files
+instance/
+*.db
+*.sqlite3
+
+# IDE and editor-specific files
+.vscode/
+.idea/
+*.iml
+
+# Dependency directories
+node_modules/
+bower_components/
+
+# Logs
+*.log
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Coverage reports
+coverage/
+
+# AWS credentials (if not using environment variables or AWS IAM roles)
+.aws/
+
+# Python wheels
+*.whl
+
+# PIP-related
+pip-wheel-metadata/
+
+# Flask migrations folder
+migrations/
+
+# Flask secret key (if stored in a separate file)
+secret_key.txt
