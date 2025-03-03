@@ -26,7 +26,7 @@ function AwsExtraction() {
 
     try {
       // Fetch API URL from .env
-      const apiUrl = import.meta.env.VITE_API_URL;
+      const apiUrl = process.env.REACT_APP_TEXTRACT_URL;
       console.log("API URL:", apiUrl); // Log API URL for debugging
 
       const response = await fetch(`${apiUrl}/upload-textract`, {
@@ -55,16 +55,78 @@ function AwsExtraction() {
     }
   };
 
+  // Inline Styles
+  const styles = {
+    container: {
+      maxWidth: "600px",
+      margin: "auto",
+      padding: "20px",
+      backgroundColor: "#f9f9f9",
+      borderRadius: "8px",
+      boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+    },
+    title: {
+      textAlign: "center",
+      color: "#333",
+      fontSize: "24px",
+      marginBottom: "20px",
+    },
+    form: {
+      display: "flex",
+      flexDirection: "column",
+      gap: "10px",
+    },
+    input: {
+      padding: "10px",
+      borderRadius: "4px",
+      border: "1px solid #ccc",
+    },
+    button: {
+      padding: "12px",
+      backgroundColor: "#004D91",
+      color: "white",
+      border: "none",
+      borderRadius: "4px",
+      cursor: "pointer",
+    },
+    buttonHover: {
+      backgroundColor: "#003c74",
+    },
+    error: {
+      color: "red",
+      textAlign: "center",
+    },
+    result: {
+      marginTop: "20px",
+      backgroundColor: "#f1f1f1",
+      padding: "10px",
+      borderRadius: "4px",
+      border: "1px solid #ddd",
+    },
+  };
+
   return (
-    <div>
-      <h2>Aws Extraction</h2>
-      <form onSubmit={handleSubmit}>
-        <input type="file" accept="image/*" onChange={handleFileChange} />
-        <button type="submit">Extract Text</button>
+    <div style={styles.container}>
+      <h2 style={styles.title}>AWS Extraction</h2>
+      <form onSubmit={handleSubmit} style={styles.form}>
+        <input
+          type="file"
+          accept="image/*"
+          onChange={handleFileChange}
+          style={styles.input}
+        />
+        <button
+          type="submit"
+          style={styles.button}
+          onMouseOver={(e) => (e.target.style.backgroundColor = styles.buttonHover.backgroundColor)}
+          onMouseOut={(e) => (e.target.style.backgroundColor = styles.button.backgroundColor)}
+        >
+          Extract Text
+        </button>
       </form>
-      {error && <p style={{ color: "red" }}>{error}</p>}
+      {error && <p style={styles.error}>{error}</p>}
       {ocrResult && (
-        <div>
+        <div style={styles.result}>
           <h3>AWS Extracted Result</h3>
           <p>Extracted Text: {ocrResult.ocr_text}</p>
         </div>

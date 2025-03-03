@@ -1,46 +1,23 @@
-# Node modules
-/node_modules/
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# Build output
-/dist/
-/build/
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
 
-# Vite development server cache
-.vite/
+# testing
+/coverage
 
-# IDE/editor specific files
-/.vscode/
-/.idea/
-/*.iml
+# production
+/build
 
-# Log files
-*.log
-
-# npm and yarn lock files
-package-lock.json
-yarn.lock
-
-# Environment variables file
-.env
-.env.local
-.env.*.local
-
-# Dependency directories
-node_modules/
-
-# OS-specific files
+# misc
 .DS_Store
-Thumbs.db
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 
-# TypeScript build artifacts (if you're using TypeScript)
-*.tsbuildinfo
-
-# Coverage reports
-coverage/
-
-# Vite-specific settings
-vite.config.ts
-vite.config.js
-
-# .env.production - for production environment variables (if using them)
-.env.production
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
